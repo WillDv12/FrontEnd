@@ -1,0 +1,62 @@
+<h1>Agregar Usuarios</h1>
+<div style="display: flex" [formGroup]="formUser">
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Cedula</mat-label>
+      <input matInput formControlName="cedulaPropietario" />
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input type="date" matInput formControlName="fechaNacimiento" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" />
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Ciudad</mat-label>
+      <input matInput formControlName="ciudadResidencia" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Apellido</mat-label>
+      <input matInput formControlName="apellido" />
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>correo</mat-label>
+      <input matInput formControlName="correo" placeholder="pepito@gmail.com" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Telefono</mat-label>
+      <input matInput formControlName="telefono" placeholder="111 222 3333" />
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Contraseña</mat-label>
+      <input matInput formControlName="contrasenia" />
+    </mat-form-field>
+  </p>
+  <button
+    *ngIf="modeForm == 'adicion'"
+    (click)="saveUser()"
+    mat-fab
+    color="primary"
+  >
+    Add
+  </button>
+  <button
+    *ngIf="modeForm == 'edicion'"
+    (click)="updateUser()"
+    mat-fab
+    color="primary"
+  >
+    Guardar
+  </button>
+</div>
